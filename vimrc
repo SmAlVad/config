@@ -16,6 +16,8 @@ set hlsearch
 set incsearch
 set autoindent
 set paste
+set showcmd       " display incomplete commands
+set autowrite     " Automatically :write before running commands
 
 let mapleader = ","
 let g:user_emmet_leader_key='<C-e>'
@@ -38,6 +40,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
 
 " PHP
 Plug 'jwalton512/vim-blade', { 'for': 'php' }
@@ -60,6 +64,7 @@ let g:ale_php_langserver_executable = expand('~/.composer/vendor/bin/php-languag
 let g:ale_javascript_eslint_use_global = 1
 
 let NERDTreeShowHidden=1
+let g:NERDTreeWinSize=50
 
 "mappings
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
@@ -67,6 +72,9 @@ nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 "map <Leader> <Plug>(easymotion-prefix)
 " Select all text
 map <C-a> <esc>ggVG<CR>
+
+" format the entire file
+nnoremap ff :normal! gg=G``<CR>
 
 nnoremap <leader>b :Buffers<CR>
 
